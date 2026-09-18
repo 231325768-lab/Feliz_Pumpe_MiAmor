@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SORPRESAA!! 🐉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="dragonball-bg">
+
+  <audio id="bgMusic" autoplay loop>
+    <source src="Dragonball.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <div class="aura-db"></div>
+  <div class="carta carta-db">
+    <h1>SORPRESAA 💛💫</h1>
+    <p>
+      Este regalo no empieza con palabras,<br>
+      empieza con energía.
+    </p>
+    <p>
+      Porque así como en Dragon Ball,<br>
+      hay batallas que solo se ganan<br>
+      cuando sabes por quién pelear.
+    </p>
+    <p>
+      <strong>Feliz Cumpleaños mi niño lindo </strong> 💛
+    </p>
+
+    <div class="firma">
+      — Con todo mi ki
+    </div>
+    <button class="btn-music" onclick="toggleMusic()">🔊 Pausar música</button>
+    <br><br>
+    <button class="btn-music" onclick="volumeDown()">🔉 Bajar volumen</button>
+    <button class="btn-music" onclick="volumeUp()">🔊 Subir volumen</button>
+    <br>
+    <br>
+    <br>
+    <br>
+   <center> 
+  <button class="btn1" onclick="playSoundAndGo()">
+  También una historia bastante bizarra...
+</button>
+
+   <audio id="clickSound">
+    <source src="sound.mp3" type="audio/mpeg">
+  </audio>
+</center>
+</div>
+
+ <script>
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.1; 
+
+    function toggleMusic() {
+      const btn = document.querySelector(".btn-music");
+      if (music.paused) {
+        music.play();
+        btn.textContent = "🔊 Pausar música";
+      } else {
+        music.pause();
+        btn.textContent = "🔇 Reanudar música";
+      }
+    }
+
+    function volumeDown() {
+      if (music.volume > 0.1) {
+        music.volume -= 0.1;
+      }
+    }
+
+    function volumeUp() {
+      if (music.volume < 1) {
+        music.volume += 0.1;
+      }
+    }
+
+    function playSoundAndGo() {
+      const sound = document.getElementById("clickSound");
+      sound.play();
+      setTimeout(() => {
+        window.location.href = "jojos.html";
+      }, 500);
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
